@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import Modal from "react-bootstrap/Modal";
+import CountDown from './assets/videos/CountDown.mp4'
 
 function CountDownModal(props) {
   return (
@@ -8,7 +9,7 @@ function CountDownModal(props) {
         <div className="d-flex justify-content-center h-100">
           <div className="align-self-center">
             <video
-              src="./video/CountDown.mp4"
+              src={CountDown}
               type="video/mp4"
               class="object-fit-cover"
               autoPlay

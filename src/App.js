@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import exemplo from './assets/images/exemplo.png'
 
 function App() {
   const [data, setData] = useState([]);
@@ -30,43 +31,62 @@ function App() {
     setTimeout(() => {
       setItemSorteado(item);
       setShowCountDownModal(false);
-    }, 13000);    
+    }, 13000);
   };
 
   return (
     <>
-      <Container fluid className="h-100">
+      <Container fluid>
         {rifa.length == 0 ? (
-          <Row className="h-100">
-            <Col className="h-100">
+          <Row>
+            <Col>
               <div className="d-flex justify-content-center h-100">
                 <div className="align-self-center">
-                  <h1>Importar planilha</h1>
-                  <FileInput data={data} setData={setData} />
+                  <Row>
+                    <Col>
+                      <h1>Importar planilha</h1>
+                      <FileInput data={data} setData={setData} />
+                    </Col>
+                  </Row>
+                  <Row className="mt-4">
+                    <Col>
+                      <p>
+                        A restrutura da planilha deve seguir contendo como
+                        segue:
+                      </p>
+                      <ul>
+                        <li>1ª linha deve conter:</li>
+                        <li>
+                          <ul>
+                            <li>
+                              1ª coluna descrição <b>Numero</b> (sem acentuação
+                              e primeira letra maiuscula)
+                            </li>
+                            <li>
+                              2ª coluna descrição <b>Compador</b> (sem
+                              acentuação e primeira letra maiuscula)
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          2ª linha em diante os numeros da rifa e seus
+                          compradores
+                        </li>
+                        <li>
+                          Obs: linhas/números sem comprador serão descartados do
+                          sorteio
+                        </li>
+                      </ul>
+                      <p>Exemplo:</p>
+                      <img src={exemplo} class="rounded mx-auto d-block border border-secondary" alt="Imagem Exemplo"></img>
+                    </Col>
+                  </Row>
                 </div>
               </div>
             </Col>
           </Row>
         ) : (
           <Row>
-            <Col md={4} className="table-container">
-              <Table striped bordered hover>
-                <thead className="sticky-top">
-                  <tr>
-                    <th>Numero</th>
-                    <th>Comprador</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rifa.map((item) => (
-                    <tr>
-                      <td>{item.Numeros}</td>
-                      <td>{item.Comprador}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </Col>
             <Col>
               <div className="d-flex justify-content-center h-100">
                 <div className="align-self-center">
@@ -81,7 +101,7 @@ function App() {
                   ) : (
                     <>
                       <h1 className="text-animation-color">
-                        Número sorteado: {itemSorteado.Numeros}
+                        Número sorteado: {itemSorteado.Numero.toString()}
                       </h1>
                       <h1 className="text-animation-color">
                         Parabéns: {itemSorteado.Comprador}
@@ -94,16 +114,34 @@ function App() {
               <p>
                 {rifa.map((item, index) => (
                   <span style={{'transform': `rotate(${((360 / rifa.length) * index)}deg)`}}>
-                    <b>{item.Numeros.toString().padStart(3, '0')}</b>
+                    <b>{item.Numero.toString().padStart(3, '0')}</b>
                   </span>
                 ))}
               </p>
             </div> */}
             </Col>
+            <Col md={4} className="table-container">
+              <Table striped bordered hover>
+                <thead className="sticky-top">
+                  <tr>
+                    <th>Numero</th>
+                    <th>Comprador</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rifa.map((item) => (
+                    <tr>
+                      <td>{item.Numero.toString()}</td>
+                      <td>{item.Comprador}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
           </Row>
         )}
       </Container>
-      <CountDownModal show={showCountDownModal}/>
+      <CountDownModal show={showCountDownModal} />
     </>
   );
 }
