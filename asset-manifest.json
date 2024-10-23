@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Sorteio/static/css/main.7fac6f2f.css",
+    "main.js": "/Sorteio/static/js/main.e9265766.js",
+    "static/js/453.835ada57.chunk.js": "/Sorteio/static/js/453.835ada57.chunk.js",
+    "index.html": "/Sorteio/index.html",
+    "main.7fac6f2f.css.map": "/Sorteio/static/css/main.7fac6f2f.css.map",
+    "main.e9265766.js.map": "/Sorteio/static/js/main.e9265766.js.map",
+    "453.835ada57.chunk.js.map": "/Sorteio/static/js/453.835ada57.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7fac6f2f.css",
+    "static/js/main.e9265766.js"
+  ]
+}
