@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+.roleta {
+  position: relative;
+  width: 50%;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  height: 6.6%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p span {
+  /* background-color: lightblue; */
+  font: 15px Monaco, MonoSpace;
+  height: 40px;
+  position: absolute;
+  width: 30px;
+  left: 0;
+  top: 0;
+  transform-origin: center 400px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p span b {
+  position: absolute;
+  rotate: 90deg;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*========*/
+
+.table-container {
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
-.App-link {
-  color: #61dafb;
+.text-animation-color {
+  -webkit-animation: color_change 1s infinite alternate pulse-animation 2s infinite;
+  -moz-animation: color_change 1s infinite alternate pulse-animation 2s infinite;
+  -ms-animation: color_change 1s infinite alternate;
+  -o-animation: color_change 1s infinite alternate;
+  animation: color_change 1s infinite alternate;
 }
 
-@keyframes App-logo-spin {
+@-webkit-keyframes color_change {
   from {
-    transform: rotate(0deg);
+    color: blue;
   }
   to {
-    transform: rotate(360deg);
+    color: green;
+  }
+  0% {
+    text-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+@-moz-keyframes color_change {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+  0% {
+    text-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+@-ms-keyframes color_change {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+  0% {
+    text-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+@-o-keyframes color_change {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+  0% {
+    text-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+@keyframes color_change {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+  0% {
+    text-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
 }
