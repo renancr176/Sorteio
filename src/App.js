@@ -51,8 +51,7 @@ function App() {
                   <Row className="mt-4">
                     <Col>
                       <p>
-                        A restrutura da planilha deve seguir contendo como
-                        segue:
+                        A estrutura da planilha deve seguir as regras a baixo:
                       </p>
                       <ul>
                         <li>1ª linha deve conter:</li>
